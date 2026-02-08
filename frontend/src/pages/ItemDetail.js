@@ -13,13 +13,13 @@ function ItemDetail() {
       .catch(() => navigate('/'));
   }, [id, navigate]);
 
-  if (!item) return <p>Loading...</p>;
+  if (!item) return <p className="loading">Loading...</p>;
 
   return (
-    <div style={{padding: 16}}>
+    <div className="item-details">
       <h2>{item.name}</h2>
       <p><strong>Category:</strong> {item.category}</p>
-      <p><strong>Price:</strong> ${item.price}</p>
+      <p><strong>Price:</strong> ${item.price.toFixed(2)}</p>
     </div>
   );
 }

@@ -7,13 +7,15 @@ import { DataProvider } from '../state/DataContext';
 function App() {
   return (
     <DataProvider>
-      <nav style={{padding: 16, borderBottom: '1px solid #ddd'}}>
-        <Link to="/">Items</Link>
+      <nav>
+        <Link to="/">📦 Item Store</Link>
       </nav>
-      <Routes>
-        <Route path="/" element={<Items />} />
-        <Route path="/items/:id" element={<ItemDetail />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Items />} />
+          <Route path="/items/:id" element={<ItemDetail />} />
+        </Routes>
+      </main>
     </DataProvider>
   );
 }
